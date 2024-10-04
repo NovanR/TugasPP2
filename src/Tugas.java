@@ -1,7 +1,6 @@
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Date;
-import javax.swing.SpinnerDateModel;
 
 public class Tugas extends JFrame {
     
@@ -65,9 +64,12 @@ public class Tugas extends JFrame {
         labelJenisTabungan.setBounds(130, 300, 150, 20);
 
         // List Jenis Tabungan
-        String[] jenisTabungan = {"Tabungan Reguler", "Tabungan Investasi", "Tabungan Dana Darurat", "Tabungan Pendidikan"};
+        String[] jenisTabungan = {"Tabungan Reguler", "Tabungan Investasi", "Tabungan Dana Darurat","Tabungan Pendidikan"};
         JList<String> listTabungan = new JList<>(jenisTabungan);
-        listTabungan.setBounds(130, 320, 150, 60);
+
+        // Membungkus JList dengan JScrollPane untuk menambahkan scrollbar
+        JScrollPane scrollPaneTabungan = new JScrollPane(listTabungan);
+        scrollPaneTabungan.setBounds(130, 320, 150, 70);
 
         // Label Frekuensi Transaksi
         JLabel labelFrekuensi = new JLabel("Frekuensi Transaksi/Bulan:");
@@ -172,13 +174,13 @@ public class Tugas extends JFrame {
         this.add(labelTanggalLahir);
         this.add(spinnerTanggalLahir);
         this.add(labelJenisTabungan);
-        this.add(listTabungan);
         this.add(labelFrekuensi);
         this.add(spinnerFrekuensi);
         this.add(labelPassword);
         this.add(passwordField);
         this.add(labelConfirmPassword);
         this.add(confirmPasswordField);
+        this.add(scrollPaneTabungan);
         this.add(button);
         this.add(txtOutput);
 
